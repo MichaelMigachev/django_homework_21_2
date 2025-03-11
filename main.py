@@ -17,7 +17,8 @@ class MyServer(BaseHTTPRequestHandler):
             self.end_headers()
 
             # Читаем содержимое HTML-файла с контактами
-            with open('.\pages\contacts.html', "r", encoding="utf-8") as f:
+            file_path =  os.path.join(os.path.dirname(__file__), "pages", "contacts.html")  # Формируем путь к файлу contacts.html
+            with open(file_path, "r", encoding="utf-8") as f:
                 html_content = f.read()
             self.wfile.write(bytes(html_content, "utf-8"))
         else:
