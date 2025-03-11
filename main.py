@@ -7,8 +7,6 @@ HOST_NAME = "localhost"
 SERVER_PORT = 8080
 
 
-# Формируем путь к файлу contacts.html
-
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         # Проверяем, какой URL был запрошен
