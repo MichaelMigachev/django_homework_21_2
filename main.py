@@ -1,9 +1,11 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import os
 
+
 # Настройки запуска
 HOST_NAME = "localhost"
 SERVER_PORT = 8080
+
 
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -15,7 +17,7 @@ class MyServer(BaseHTTPRequestHandler):
             self.end_headers()
 
             # Читаем содержимое HTML-файла с контактами
-            with open("pages/contact.html", "r") as f:
+            with open('.\pages\contacts.html', "r", encoding="utf-8") as f:
                 html_content = f.read()
             self.wfile.write(bytes(html_content, "utf-8"))
         else:
